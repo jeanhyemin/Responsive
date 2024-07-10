@@ -1,0 +1,117 @@
+/* 와이드 pc  */
+/* .videoBox{width:100%; height:100%; overflow:hidden; position:absolute} */
+#imgBG{
+	position:fixed; /*고정=>fixed/ 스크롤처리=>absolute */
+   left:50%;
+   top:50%; /*오른쪽, 아래에 여백을 두지않고 꽉차게 표시*/
+   width:auto;
+   min-width:100%; /*동영상 너비를 꽉차게*/
+   height:auto;
+   min-height:100%; /*동영상 높이를 꽉차게*/
+   transform:translateX(-50%) translateY(-50%);
+   z-index:-100;
+}
+
+.down{display: block; font-size: 20px;
+   font-family: 'Roboto', sans-serif;
+   text-align: center; line-height: 50px;
+   position: absolute; left: 50%; transform: translateX(-50%);
+   bottom: 6%;
+}
+
+.down span{display: block; animation:ani 1s infinite alternate;}
+@keyframes ani {
+	0% {transform:scale(1); opacity: 1; color:#ddd;}
+	100% {transform:scale(1.2); opacity: 0.8; color:#fff;}
+}	
+
+#content{width:100%; margin:0;
+   background:#000; position: relative; color: #fff;}
+#content h2{position: absolute; top: -60vh; color: #fff;
+   width: 100%; text-align: center; font-size: 4rem;
+   text-shadow: 0 0 7px #fff, 0 0 11px #44B, 0 0 42px #44B, 0 0 82px #44B, 0 0 92px #44B;
+}
+
+#content >span{font-size: 4rem; font-weight: 700;
+   display: block; text-align: center;
+   padding-top: 250px;}
+#content >p{font-size: 1.56rem; font-weight: 300;
+   text-align: center;
+   margin: 50px auto 220px;}
+
+#content section{margin: 0 100px; padding: 100px 0;}
+#content section h3{font-size: 2rem; font-weight: 700;
+   margin-bottom: 30px;}
+
+
+.grid-item,.grid-sizer{ width: 20%; height: auto; }
+.grid-item {
+   margin-bottom: 10px; padding:10px;
+   float: left; box-sizing: border-box;
+}
+.grid-item img{
+   display: block; width:100%;
+   margin: 10px 0 30px; transition: all .5s;
+}
+.grid-item:hover img{filter: brightness(105%);
+   border-radius: 30%;
+   box-shadow: 1px 1px 10px 1px rgba(7, 76, 144, 0.9), 0 0 8px 1px #fff, 1px 1px 15px 3px #44B;}
+.grid-item p{text-align: center; font-weight: 300;}
+.grid-item p span{font-size: 1rem; font-weight: 700;}
+
+
+/* 일반 pc */
+@media screen and (max-width:1280px) {
+	#content >span{font-size: 3.6rem; padding-top: 250px;}
+   #content >p{margin: 50px auto 180px;}
+   #content section{padding: 70px 0;}
+
+   .grid-item,.grid-sizer{ width: 25%;}
+
+   .grid-item p span{font-weight: 600;}
+}
+
+
+/* 테블릿 */
+@media screen and (max-width:1024px) {
+   #content h2{ font-size: 3.8rem;}
+   #content >span{font-size: 3rem; padding-top: 240px;}
+   #content >p{font-size: 1.3rem;
+      margin: 50px 80px 220px;}
+   
+   #content section{margin: 0 60px; padding: 50px 0;}
+   #content section h3{font-size: 1.67rem; margin-bottom: 20px;}
+
+   .grid-item,.grid-sizer{ width: 33.33%;}
+   
+   .grid-item p{font-size: 0.88rem;}
+}
+
+
+/* 소형 테블릿 */
+@media screen and (max-width:768px) {
+   .down{font-size: 15px;}
+   #content >span{font-size: 2.5rem; padding-top: 100px;}
+   #content >p{font-size: 1.11rem; margin: 30px 60px 50px;}
+
+   #content section{margin: 0 60px; padding: 60px 0;}
+   #content section h3{font-size: 1.5rem;
+      margin-bottom: 30px;}
+
+   .grid-item,.grid-sizer{width: 50%;}
+
+
+}
+
+/* 모바일 */
+@media screen and (max-width:640px) {
+   #content >span{font-size: 1.9rem;}
+
+   #content section{margin: 0 30px; padding: 50px 0;}
+   #content section h3{font-size: 1rem; font-weight: 500;
+      margin-bottom: 10px;}
+
+   .grid-item,.grid-sizer{width: 100%;}
+   
+
+}
